@@ -1,0 +1,22 @@
+{
+    "name": "fawno/simpleiptc",
+    "description": "Simple PHP class for IPTC documents",
+    "type": "library",
+    "keywords": ["iptc"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fernando Herrero",
+            "homepage": "https://lab.fawno.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "SimpleIPTC\\": "src/"
+        }
+    }
+}
