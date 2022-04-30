@@ -7,7 +7,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/fawno/SimpleIPTC)](https://github.com/fawno/SimpleIPTC/network)
 [![GitHub stars](https://img.shields.io/github/stars/fawno/SimpleIPTC)](https://github.com/fawno/SimpleIPTC/stargazers)
 
-# SimpleSVG
+# SimpleIPTC
 
 Simple PHP class for IPTC documents
 

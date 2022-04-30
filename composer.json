@@ -2,7 +2,7 @@
     "name": "fawno/simpleiptc",
     "description": "Simple PHP class for IPTC documents",
     "type": "library",
-    "keywords": ["iptc"],
+    "keywords": ["iptc", "iptc-metadata"],
     "license": "MIT",
     "authors": [
         {
