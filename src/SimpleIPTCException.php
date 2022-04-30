@@ -23,12 +23,6 @@
    * Provides custom exception class.
    *
    * @package SimpleIPTC
-   * @used-by Fawno\PhpSerial\Serial
-   * @used-by Fawno\PhpSerial\SerialDio
-   * @used-by Fawno\PhpSerial\SerialFile
-   * @used-by Fawno\PhpSerial\SerialFileDawing
-   * @used-by Fawno\PhpSerial\SerialFileLinux
-   * @used-by Fawno\PhpSerial\SerialFileWindows
    */
   class SimpleIPTCException extends Exception {
     public const ERROR_INDETERMINATE = 0;
