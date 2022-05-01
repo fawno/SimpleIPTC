@@ -1,6 +1,5 @@
 [![GitHub license](https://img.shields.io/github/license/fawno/SimpleIPTC)](https://github.com/fawno/SimpleIPTC/blob/master/LICENSE)
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/fawno/SimpleIPTC)](https://github.com/fawno/SimpleIPTC/tags)
-[![GitHub release](https://img.shields.io/github/release/fawno/SimpleIPTC)](https://github.com/fawno/SimpleIPTC/releases)
 [![Packagist](https://img.shields.io/packagist/v/fawno/simpleiptc)](https://packagist.org/packages/fawno/simpleiptc)
 [![Packagist Downloads](https://img.shields.io/packagist/dt/fawno/simpleiptc)](https://packagist.org/packages/fawno/simpleiptc/stats)
 [![GitHub issues](https://img.shields.io/github/issues/fawno/SimpleIPTC)](https://github.com/fawno/SimpleIPTC/issues)
