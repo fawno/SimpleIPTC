@@ -16,35 +16,11 @@
 
   namespace SimpleIPTC;
 
+  use SimpleIPTC\IPTCTags;
+  use SimpleIPTC\SimpleIPTCException;
+
   /** @package SimpleIPTC */
   class SimpleIPTC {
-    const IPTC_TAGS = [
-      '1#000' => [
-        'name' => 'EnvelopeRecordVersion',
-        'format' => 'n', // int16u big endian
-      ],
-      '1#020' => [
-        'name' => 'FileFormat',
-        'format' => 'n', // int16u big endian
-      ],
-      '1#022' => [
-        'name' => 'FileVersion',
-        'format' => 'n', // int16u big endian
-      ],
-      '2#000' => [
-        'name' => 'ApplicationRecordVersion',
-        'format' => 'n', // int16u big endian
-      ],
-      '2#055' => [
-        'name' => 'DateCreated',
-        'format' => 'a*',
-      ],
-      '2#243' => [
-        'name' => 'CustomData',
-        'format' => 'a*',
-      ],
-    ];
-
     /**
      * @param string $bin
      * @return array
@@ -52,15 +28,18 @@
     public static function bin2iptc (string $bin) : array {
       $iptc = [];
 
+			$app13 = unpack('Z13mark/x/a4bim/n2/Nlenght', $bin);
+			$bin = preg_match('~Photoshop \d\.\d~', $app13['mark']) ? substr($bin, 26, $app13['lenght']) : $bin;
+
       $fp = fopen('php://memory','rb+');
       fwrite ($fp, $bin);
       rewind($fp);
 
-      while ("\x1C" == fread($fp, 1)) {
+      while (!feof($fp) and "\x1C" == fread($fp, 1)) {
         $parts = unpack('Crecord/Cid/nlength', fread($fp, 4));
 
         $tag = sprintf('%u#%03u', $parts['record'], $parts['id']);
-        $format = self::IPTC_TAGS[$tag]['format'] ?? 'a*';
+        $format = IPTCTags::getTagFormat($tag);
 
         if ($parts['length'] == 0x8004) {
           $parts = unpack('Nlength', fread($fp, 4));
@@ -68,7 +47,7 @@
 
         $iptc[] = [
           'tag' => $tag,
-          'name' => self::IPTC_TAGS[$tag]['name'] ?? null,
+          'name' => IPTCTags::getTagName($tag),
           'value' => current(unpack($format, fread($fp, $parts['length']))),
         ];
       }
@@ -85,11 +64,10 @@
     public static function iptc2bin (array $iptc) : string {
       $data = '';
 
-      foreach ($iptc as $record) {
+      foreach ($iptc as $key => $record) {
         if (!empty($record['value'])) {
-          $tag = $record['tag'] ?? null;
-          $format = self::IPTC_TAGS[$tag]['format'] ?? 'a*';
-          $value = pack($format, $record['value']);
+          $tag = $record['tag'] ?? $key;
+          $value = pack(IPTCTags::getTagFormat($tag), ($record['value'] ?? $record));
           $length = strlen($value);
 
           $data .= pack('C*', 0x1C, ...explode('#', $tag));
@@ -101,5 +79,35 @@
       }
 
       return $data;
+    }
+
+    public static function getImageIPTC (string $image) : array {
+      if (is_file($image)) {
+        if (!getimagesize($image, $info)) {
+          throw new SimpleIPTCException(sprintf('Error getting info from image file: %s', $image));
+        }
+      } else {
+        if (!getimagesizefromstring($image, $info)) {
+          throw new SimpleIPTCException('Error getting info from image string');
+        }
+      }
+
+      if (empty($info['APP13'])) {
+        return [];
+      }
+
+      return self::bin2iptc($info['APP13']);
+    }
+
+    public static function writeImageIPTC (array $iptc, string $filename) : bool {
+      $iptc = SimpleIPTC::iptc2bin($iptc);
+
+      $image = iptcembed($iptc, $filename);
+
+      if ($image === false) {
+        throw new SimpleIPTCException('Error embedding binary IPTC data');
+      }
+
+      return (bool) file_put_contents($filename, $image);
     }
   }
