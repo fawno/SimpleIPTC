@@ -11,7 +11,7 @@
       ],
       '1#005' => [
         'name' => 'Destination',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '1#020' => [
         'name' => 'FileFormat',
@@ -23,35 +23,35 @@
       ],
       '1#030' => [
         'name' => 'ServiceIdentifier',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '1#040' => [
         'name' => 'EnvelopeNumber',
-        'format' => 'Z*', // digits
+        'format' => 'a*', // digits
       ],
       '1#050' => [
         'name' => 'ProductID',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '1#060' => [
         'name' => 'EnvelopePriority',
-        'format' => 'Z*', // digits
+        'format' => 'a*', // digits
       ],
       '1#070' => [
         'name' => 'DateSent',
-        'format' => 'Z*', // digits
+        'format' => 'a*', // digits
       ],
       '1#080' => [
         'name' => 'TimeSent',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '1#090' => [
         'name' => 'CodedCharacterSet',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '1#100' => [
         'name' => 'UniqueObjectName',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '1#120' => [
         'name' => 'ARMIdentifier',
@@ -67,239 +67,239 @@
       ],
       '2#003' => [
         'name' => 'ObjectTypeReference',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#004' => [
         'name' => 'ObjectAttributeReference',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#005' => [
         'name' => 'ObjectName',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#007' => [
         'name' => 'EditStatus',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#008' => [
         'name' => 'EditorialUpdate',
-        'format' => 'Z*', // digits
+        'format' => 'a*', // digits
       ],
       '2#010' => [
         'name' => 'Urgency',
-        'format' => 'Z*', // digits
+        'format' => 'a*', // digits
       ],
       '2#012' => [
         'name' => 'SubjectReference',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#015' => [
         'name' => 'Category',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#020' => [
         'name' => 'SupplementalCategories',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#022' => [
         'name' => 'FixtureIdentifier',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#025' => [
         'name' => 'Keywords',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#026' => [
         'name' => 'ContentLocationCode',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#027' => [
         'name' => 'ContentLocationName',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#030' => [
         'name' => 'ReleaseDate',
-        'format' => 'Z*', // digits
+        'format' => 'a*', // digits
       ],
       '2#035' => [
         'name' => 'ReleaseTime',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#037' => [
         'name' => 'ExpirationDate',
-        'format' => 'Z*', // digits
+        'format' => 'a*', // digits
       ],
       '2#038' => [
         'name' => 'ExpirationTime',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#040' => [
         'name' => 'SpecialInstructions',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#042' => [
         'name' => 'ActionAdvised',
-        'format' => 'Z*', // digits
+        'format' => 'a*', // digits
       ],
       '2#045' => [
         'name' => 'ReferenceService',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#047' => [
         'name' => 'ReferenceDate',
-        'format' => 'Z*', // digits
+        'format' => 'a*', // digits
       ],
       '2#050' => [
         'name' => 'ReferenceNumber',
-        'format' => 'Z*', // digits
+        'format' => 'a*', // digits
       ],
       '2#055' => [
         'name' => 'DateCreated',
-        'format' => 'Z*', // digits
+        'format' => 'a*', // digits
       ],
       '2#060' => [
         'name' => 'TimeCreated',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#062' => [
         'name' => 'DigitalCreationDate',
-        'format' => 'Z*', // digits
+        'format' => 'a*', // digits
       ],
       '2#063' => [
         'name' => 'DigitalCreationTime',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#065' => [
         'name' => 'OriginatingProgram',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#070' => [
         'name' => 'ProgramVersion',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#075' => [
         'name' => 'ObjectCycle',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#080' => [
         'name' => 'By-line',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#085' => [
         'name' => 'By-lineTitle',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#090' => [
         'name' => 'City',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#092' => [
         'name' => 'Sub-location',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#095' => [
         'name' => 'Province-State',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#100' => [
         'name' => 'Country-PrimaryLocationCode',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#101' => [
         'name' => 'Country-PrimaryLocationName',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#103' => [
         'name' => 'OriginalTransmissionReference',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#105' => [
         'name' => 'Headline',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#110' => [
         'name' => 'Credit',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#115' => [
         'name' => 'Source',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#116' => [
         'name' => 'CopyrightNotice',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#118' => [
         'name' => 'Contact',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#120' => [
         'name' => 'Caption-Abstract',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#121' => [
         'name' => 'LocalCaption',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#122' => [
         'name' => 'Writer-Editor',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#125' => [
         'name' => 'RasterizedCaption',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#130' => [
         'name' => 'ImageType',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#131' => [
         'name' => 'ImageOrientation',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#135' => [
         'name' => 'LanguageIdentifier',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#150' => [
         'name' => 'AudioType',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#151' => [
         'name' => 'AudioSamplingRate',
-        'format' => 'Z*', // digits
+        'format' => 'a*', // digits
       ],
       '2#152' => [
         'name' => 'AudioSamplingResolution',
-        'format' => 'Z*', // digits
+        'format' => 'a*', // digits
       ],
       '2#153' => [
         'name' => 'AudioDuration',
-        'format' => 'Z*', // digits
+        'format' => 'a*', // digits
       ],
       '2#154' => [
         'name' => 'AudioOutcue',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#184' => [
         'name' => 'JobID',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#185' => [
         'name' => 'MasterDocumentID',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#186' => [
         'name' => 'ShortDocumentID',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#187' => [
         'name' => 'UniqueDocumentID',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#188' => [
         'name' => 'OwnerID',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#200' => [
         'name' => 'ObjectPreviewFileFormat',
@@ -311,31 +311,31 @@
       ],
       '2#202' => [
         'name' => 'ObjectPreviewData',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#221' => [
         'name' => 'Prefs',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#225' => [
         'name' => 'ClassifyState',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#228' => [
         'name' => 'SimilarityIndex',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#230' => [
         'name' => 'DocumentNotes',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#231' => [
         'name' => 'DocumentHistory',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#232' => [
         'name' => 'ExifCameraInfo',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '2#243' => [
         'name' => 'CustomData',
@@ -343,7 +343,7 @@
       ],
       '2#255' => [
         'name' => 'CatalogSets',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '3#000' => [
         'name' => 'NewsPhotoVersion',
@@ -351,7 +351,7 @@
       ],
       '3#010' => [
         'name' => 'IPTCPictureNumber',
-        'format' => 'Z*', // string
+        'format' => 'a*', // string
       ],
       '3#020' => [
         'name' => 'IPTCImageWidth',
