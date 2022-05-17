@@ -28,8 +28,15 @@
     public static function bin2iptc (string $bin) : array {
       $iptc = [];
 
-			$app13 = unpack('Z13mark/x/a4bim/n2/Nlenght', $bin);
-			$bin = preg_match('~Photoshop \d\.\d~', $app13['mark']) ? substr($bin, 26, $app13['lenght']) : $bin;
+      $app13 = unpack('Z13mark/x/a4bim/n2/Nlenght', $bin);
+      if (preg_match('~Photoshop \d\.\d~', $app13['mark'])) {
+        $start = 26;
+        if ('8BIM' == substr($bin, 26 + $app13['lenght'], 4)) {
+          $start = 38 + $app13['lenght'];
+          $app13 = unpack('a4bim/n2/Nlenght', substr($bin, $start - 12, 12));
+        }
+        $bin = substr($bin, $start, $app13['lenght']);
+      }
 
       $fp = fopen('php://memory','rb+');
       fwrite ($fp, $bin);
