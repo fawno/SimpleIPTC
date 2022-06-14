@@ -52,11 +52,18 @@
           $parts = unpack('Nlength', fread($fp, 4));
         }
 
-        $iptc[] = [
-          'tag' => $tag,
-          'name' => IPTCTags::getTagName($tag),
-          'value' => current(unpack($format, fread($fp, $parts['length']))),
-        ];
+				if ($parts['length'] == 0) {
+          continue;
+        }
+
+        $bin = fread($fp, $parts['length']);
+        if ($bin !== false) {
+          $iptc[] = [
+            'tag' => $tag,
+            'name' => IPTCTags::getTagName($tag),
+            'value' => current(unpack($format, $bin)),
+          ];
+        }
       }
 
       fclose($fp);
