@@ -36,10 +36,17 @@
         return [];
       }
 
-      $app13 = unpack('a4bim/n2/Nlenght', $bin);
+      $app13 = unpack('a4bim/nid/n/Nlenght', $bin);
+
       if ('8BIM' == substr($bin, 12 + $app13['lenght'], 4)) {
         $iptc = self::bin2iptc(substr($bin, 12 + $app13['lenght']));
       }
+
+      // IPTC-NAA block id: 0x0404
+      if ($app13['id'] != 0x0404) {
+				return $iptc;
+			}
+
       $bin = substr($bin, 12, $app13['lenght']);
 
       $fp = fopen('php://memory','rb+');
