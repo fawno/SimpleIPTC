@@ -10,6 +10,8 @@
 
 Simple PHP class for IPTC documents
 
+Abandoned, use [Metadata-Toolkit](https://github.com/fawno/Metadata-Toolkit) instead.
+
 ## Instalation
 
 ```sh
